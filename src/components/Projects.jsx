@@ -32,7 +32,7 @@ import s2c from '../assets/s2c1.png'; // Fixed import path
 import cookit from '../assets/cookit.png'; // Fixed import path
 import cookit1 from '../assets/cookit1.png'; // Fixed import path
 import cookit2 from '../assets/cookit2.png'; // Fixed import path
-
+import costing from '../assets/costing.png'; // Fixed import path
 // Updated project data with actual projects
 const projects = [
     {
@@ -41,7 +41,7 @@ const projects = [
         desc: 'A comprehensive project workflow management system designed to streamline project planning, task assignment, and progress tracking with real-time collaboration features.',
         technologies: ['PHP', 'JQuery', 'MySQL', 'JavaScript'],
         github: 'https://github.com/gabechaluce/rgaklms',
-        demo: 'https://your-rga-demo.com',
+     
         image: rga1,
         images: [rga1, rga2, rga3, rga4],
         category: 'fullstack'
@@ -54,7 +54,7 @@ const projects = [
         github: 'https://github.com/gabechaluce/rgaklms',
         demo: 'https://your-rgaims-demo.com',
         image: rgaims,
-        images: [rgaims, rgaims1, rgaims2, rgaims3],
+        images: [rgaims, rgaims1, rgaims2, rgaims3, costing],
         category: 'fullstack'
     },
     {
@@ -356,34 +356,8 @@ const Projects = () => {
                                 }`}>
                                 <div className={`font-semibold text-lg truncate ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{project.title}</div>
                                 <div className="flex space-x-4">
-                                    {project.github && (
-                                        <a 
-                                            href={project.github} 
-                                            target="_blank" 
-                                            rel="noopener noreferrer" 
-                                            className={`transition-all duration-300 transform hover:scale-110 p-2 rounded-full 
-                                                ${isDarkMode 
-                                                    ? 'text-white hover:text-purple-400 hover:bg-white/10' 
-                                                    : 'text-gray-800 hover:text-purple-600 hover:bg-gray-200'
-                                                }`}
-                                            title="View GitHub Repository"
-                                        >
-                                            <Github size={24} />
-                                        </a>
-                                    )}
-                                    <a 
-                                        href={project.demo} 
-                                        target="_blank" 
-                                        rel="noopener noreferrer" 
-                                        className={`transition-all duration-300 transform hover:scale-110 p-2 rounded-full 
-                                            ${isDarkMode 
-                                                ? 'text-white hover:text-purple-400 hover:bg-white/10' 
-                                                : 'text-gray-800 hover:text-purple-600 hover:bg-gray-200'
-                                            }`}
-                                        title="View Live Demo"
-                                    >
-                                        <ExternalLink size={24} />
-                                    </a>
+                                   
+                                  
                                 </div>
                             </div>
                         </div>
