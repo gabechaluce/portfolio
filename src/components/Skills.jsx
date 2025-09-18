@@ -60,7 +60,7 @@ const Skills = () => {
     const [filter, setFilter] = useState('all');
     const [hoveredSkill, setHoveredSkill] = useState(null);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [ setScrolled] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const [skillsVisible, setSkillsVisible] = useState([]);
 
@@ -94,7 +94,17 @@ const Skills = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-   
+    const handleMouseMove = (e, index) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        
+        setMousePosition({ x: rotateX, y: rotateY });
+    };
 
     const filteredSkills = skills.filter(skill => filter === 'all' || skill.category === filter);
 
@@ -221,7 +231,7 @@ const Skills = () => {
                                 setHoveredSkill(null);
                                 setMousePosition({ x: 0, y: 0 });
                             }}
-                            
+                            onMouseMove={(e) => handleMouseMove(e, index)}
                         >
                             {/* Floating icon container with enhanced white background */}
                             <div className={`mb-6 p-4 rounded-2xl transition-all duration-700 relative z-10 ${
