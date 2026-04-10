@@ -24,10 +24,6 @@ import sass from '../assets/sass.png';
 import typesript from '../assets/typescript.png';
 import angular from '../assets/angular.png';
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4e3af0cdd8e859e09616152de611055023cd6104
 // Reorganized skills array - Frontend first, then Backend
 const skills = [
     // Frontend Skills
